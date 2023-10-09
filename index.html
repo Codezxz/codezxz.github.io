@@ -28,16 +28,27 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <!-- Your JavaScript code for handling the download functionality can go here -->
+    <!-- Your JavaScript code for handling the download functionality and storing the link -->
     <script>
-        // Add your JavaScript code here to handle the download functionality
-        document.getElementById("downloadButton").addEventListener("click", function() {
-            // Get the Spotify link from the input field
-            var spotifyLink = document.getElementById("spotifyLink").value;
+        // Add your JavaScript code here to handle the download functionality and store the link
+        document.addEventListener("DOMContentLoaded", function() {
+            // Retrieve the stored Spotify link from localStorage, if available
+            var storedLink = localStorage.getItem("spotifyLink");
+            if (storedLink) {
+                document.getElementById("spotifyLink").value = storedLink;
+            }
 
-            // You can add your download logic here, e.g., open a new window with the Spotify link
-            // Example:
-            // window.open(spotifyLink);
+            document.getElementById("downloadButton").addEventListener("click", function() {
+                // Get the Spotify link from the input field
+                var spotifyLink = document.getElementById("spotifyLink").value;
+
+                // Store the Spotify link in localStorage for future use
+                localStorage.setItem("spotifyLink", spotifyLink);
+
+                // You can add your download logic here, e.g., open a new window with the Spotify link
+                // Example:
+                // window.open(spotifyLink);
+            });
         });
     </script>
 </body>
