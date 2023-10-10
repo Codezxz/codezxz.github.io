@@ -28,14 +28,16 @@ body {
 
 .login-form {
     animation: terminalAnimation 0.5s ease-in-out;
-    width: 80%;
+    width: 100%; /* Change width to 100% to make it full-width */
     max-width: 600px;
+    margin: 0 auto; /* Center the form horizontally */
     background-color: black;
     border: 1px solid white;
-    padding: 10px;
+    padding: 20px; /* Increase padding for spacing */
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
     text-align: center;
 }
+
 
 #input {
     width: 100%;
