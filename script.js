@@ -1,27 +1,34 @@
-const terminal = document.getElementById('output');
+const loginForm = document.getElementById('login-form');
+const terminal = document.querySelector('.terminal');
+const terminalOutput = document.getElementById('output');
 const inputField = document.getElementById('input');
 
-inputField.addEventListener('keydown', function (e) {
-    if (e.key === 'Enter') {
-        const command = inputField.value;
-        inputField.value = '';
-        terminal.innerHTML += `<div>$ ${command}</div>`;
-        
-        // Send the command to a server for processing (replace with your server's URL)
-        fetch('https://your-server-url.com/process-command', {
-            method: 'POST',
-            body: JSON.stringify({ command }),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            // Display the server's response
-            terminal.innerHTML += `<div>${data.response}</div>`;
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
+loginForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    // Send the credentials to the server for authentication (you will implement this on the server)
+    const response = await fetch('/authenticate', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, password }),
+    });
+
+    if (response.ok) {
+        // Authentication successful, hide the login form and display the terminal
+        loginForm.style.display = 'none';
+        terminal.style.display = 'block';
+    } else {
+        // Authentication failed, display an error message
+        alert('Authentication failed. Please check your credentials.');
     }
+});
+
+// Add your existing terminal input handling code here
+inputField.addEventListener('keydown', function (e) {
+    // ...
 });
