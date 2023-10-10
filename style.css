@@ -1,3 +1,13 @@
+@keyframes terminalAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 body {
     font-family: monospace;
     background-color: black;
@@ -7,6 +17,7 @@ body {
 }
 
 .terminal {
+    animation: terminalAnimation 0.5s ease-in-out;
     width: 80%;
     max-width: 600px;
     margin: 50px auto;
@@ -24,20 +35,10 @@ body {
     outline: none;
 }
 
-/* Add this CSS code to your style.css */
-@keyframes terminalAnimation {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+
 
 .terminal {
     /* ... (existing CSS code) */
-    animation: terminalAnimation 0.5s ease-in-out;
+    
 }
 
