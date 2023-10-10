@@ -8,19 +8,24 @@
         transform: translateY(0);
     }
 }
+
 body {
     font-family: monospace;
     background-color: black;
     color: white;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-.terminal {
+.login-form, .terminal {
     animation: terminalAnimation 0.5s ease-in-out;
     width: 80%;
     max-width: 600px;
-    margin: 50px auto;
     background-color: black;
     border: 1px solid white;
     padding: 10px;
@@ -35,5 +40,27 @@ body {
     outline: none;
 }
 
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
 
+.login-form label {
+    margin-bottom: 10px;
+}
 
+.login-form input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.login-form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
