@@ -1,4 +1,3 @@
-/* Add this CSS to style.css */
 @keyframes terminalAnimation {
     from {
         opacity: 0;
@@ -38,19 +37,6 @@ body {
     text-align: center;
 }
 
-button#login-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    outline: none; /* Remove the focus outline when clicked */
-}
-
-button#login-button:hover {
-    background-color: #0056b3; /* Change the color on hover if desired */
-}
-
 #input {
     width: 100%;
     border: none;
@@ -68,4 +54,12 @@ button#login-button:hover {
     width: 100%;
     padding: 5px;
     margin-bottom: 10px;
+}
+
+.login-form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
 }
