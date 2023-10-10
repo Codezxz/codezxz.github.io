@@ -3,57 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S P O T</title>
-    <!-- Bootstrap CSS Link -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Web Terminal</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container mt-5">
-        <h1 class="mb-4">S P O T</h1>
-        <div class="row">
-            <div class="col-md-8">
-                <form>
-                    <div class="form-group">
-                        <label for="spotifyLink">Link:</label>
-                        <input type="text" class="form-control" id="spotifyLink" placeholder="Paste your Spotify link here">
-                    </div>
-                    <button type="button" class="btn btn-primary" id="downloadButton">Download</button>
-                </form>
-            </div>
-        </div>
+    <div class="terminal">
+        <pre id="output"></pre>
+        <input id="input" type="text" autofocus />
     </div>
-
-    <!-- Bootstrap JS and jQuery Scripts (required for Bootstrap) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <!-- Your JavaScript code for handling the download functionality and storing the link -->
-    <script>
-        // Add your JavaScript code here to handle the download functionality and store the link
-        document.addEventListener("DOMContentLoaded", function() {
-            // Retrieve the stored Spotify link from localStorage, if available
-            var storedLink = localStorage.getItem("spotifyLink");
-            if (storedLink) {
-                document.getElementById("spotifyLink").value = storedLink;
-            }
-
-            document.getElementById("downloadButton").addEventListener("click", function() {
-                // Get the Spotify link from the input field
-                var spotifyLink = document.getElementById("spotifyLink").value;
-
-                // Store the Spotify link in localStorage for future use
-                localStorage.setItem("spotifyLink", spotifyLink);
-
-                // Open the link in a new tab or window
-                var newWindow = window.open(spotifyLink, "_blank");
-                if (!newWindow || newWindow.closed || typeof newWindow.closed === "undefined") {
-                    // Pop-up was blocked or failed to open
-                    // You can inform the user here or provide an alternative method
-                    alert("The pop-up window was blocked. Please allow pop-ups for this website.");
-                }
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
