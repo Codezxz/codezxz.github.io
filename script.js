@@ -9,16 +9,12 @@ let isAuthenticated = false;
 loginForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
+    const formData = new FormData(loginForm);
 
-    // Send the credentials to the server for authentication (you will implement this on the server)
+    // Send the form data to the server for authentication (you will implement this on the server)
     const response = await fetch('/authenticate', {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, password }),
+        body: formData, // Use the FormData object to send form data
     });
 
     if (response.ok) {
