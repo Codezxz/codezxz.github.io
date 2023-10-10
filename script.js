@@ -8,7 +8,7 @@ inputField.addEventListener('keydown', function (e) {
         terminal.innerHTML += `<div>$ ${command}</div>`;
         
         // Send the command to a server for processing (replace with your server's URL)
-        fetch('https://www.google.com/search?q=', {
+        fetch('https://your-server-url.com/process-command', {
             method: 'POST',
             body: JSON.stringify({ command }),
             headers: {
