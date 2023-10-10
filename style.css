@@ -22,7 +22,11 @@ body {
     height: 100vh;
 }
 
-.login-form, .terminal {
+.center-container {
+    text-align: center;
+}
+
+.login-form {
     animation: terminalAnimation 0.5s ease-in-out;
     width: 80%;
     max-width: 600px;
@@ -30,6 +34,7 @@ body {
     border: 1px solid white;
     padding: 10px;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    text-align: center;
 }
 
 #input {
@@ -40,14 +45,8 @@ body {
     outline: none;
 }
 
-.login-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
 .login-form label {
+    display: block;
     margin-bottom: 10px;
 }
 
