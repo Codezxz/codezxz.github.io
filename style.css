@@ -67,3 +67,18 @@ body {
     padding: 5px 10px;
     cursor: pointer;
 }
+
+/* Add this CSS to style.css */
+.btn.btn-dark {
+    background-color: #343a40; /* Dark background color */
+    color: white; /* Text color */
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    outline: none; /* Remove the focus outline when clicked */
+}
+
+.btn.btn-dark:hover {
+    background-color: #212529; /* Darker color on hover if desired */
+}
+
