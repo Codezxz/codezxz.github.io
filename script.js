@@ -1,5 +1,4 @@
 const loginForm = document.getElementById('login-form');
-const loginButton = document.getElementById('login-button');
 const terminal = document.querySelector('.terminal');
 const terminalOutput = document.getElementById('output');
 const inputField = document.getElementById('input');
@@ -7,17 +6,15 @@ const inputField = document.getElementById('input');
 // Flag to determine if the user is authenticated
 let isAuthenticated = false;
 
-loginButton.addEventListener('click', async () => { // Changed to click event on the login button
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
+loginForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-    // Send the credentials to the server for authentication (you will implement this on the server)
+    const formData = new FormData(loginForm);
+
+    // Send the form data to the server for authentication (you will implement this on the server)
     const response = await fetch('/authenticate', {
         method: 'POST',
-        body: JSON.stringify({ username, password }),
-        headers: {
-            'Content-Type': 'application/json',
-        },
+        body: formData, // Use the FormData object to send form data
     });
 
     if (response.ok) {
@@ -29,8 +26,6 @@ loginButton.addEventListener('click', async () => { // Changed to click event on
         // Authentication failed, display an error message
         alert('Authentication failed. Please check your credentials.');
     }
-    
-    return false; // Prevent the form from submitting and page from shrinking
 });
 
 inputField.addEventListener('keydown', async (e) => {
