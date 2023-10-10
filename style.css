@@ -27,8 +27,9 @@ body {
 }
 
 /* Add this CSS to style.css */
+/* Add this CSS to style.css */
 .login-form {
-    animation: terminalAnimation 0.9s ease-in-out;
+    animation: terminalAnimation 0.5s ease-in-out;
     width: 100%; /* Change width to 100% to make it full-width */
     max-width: 600px;
     margin: 0 auto; /* Center the form horizontally */
@@ -39,11 +40,12 @@ body {
     text-align: center;
 }
 
-/* Add this CSS to adjust box-sizing for input elements */
+/* Add this CSS to center the input elements horizontally */
 .login-form input {
     box-sizing: border-box; /* Ensure the input elements fit within the login box */
     width: 100%;
     padding: 5px;
+    margin: 0 auto; /* Center the input elements horizontally */
     margin-bottom: 10px;
 }
 
