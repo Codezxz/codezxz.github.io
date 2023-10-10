@@ -45,8 +45,13 @@
                 // Store the Spotify link in localStorage for future use
                 localStorage.setItem("spotifyLink", spotifyLink);
 
-                //
-                window.open(spotifyLink);
+                // Open the link in a new tab or window
+                var newWindow = window.open(spotifyLink, "_blank");
+                if (!newWindow || newWindow.closed || typeof newWindow.closed === "undefined") {
+                    // Pop-up was blocked or failed to open
+                    // You can inform the user here or provide an alternative method
+                    alert("The pop-up window was blocked. Please allow pop-ups for this website.");
+                }
             });
         });
     </script>
