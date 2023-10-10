@@ -28,7 +28,7 @@ body {
 
 /* Add this CSS to style.css */
 .login-form {
-    animation: terminalAnimation 0.5s ease-in-out;
+    animation: terminalAnimation 0.9s ease-in-out;
     width: 100%; /* Change width to 100% to make it full-width */
     max-width: 600px;
     margin: 0 auto; /* Center the form horizontally */
