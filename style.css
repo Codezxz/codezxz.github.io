@@ -23,3 +23,21 @@ body {
     color: white;
     outline: none;
 }
+
+/* Add this CSS code to your style.css */
+@keyframes terminalAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.terminal {
+    /* ... (existing CSS code) */
+    animation: terminalAnimation 0.5s ease-in-out;
+}
+
