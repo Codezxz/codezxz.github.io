@@ -1,5 +1,5 @@
 const loginForm = document.getElementById('login-form');
-const loginButton = document.getElementById('login-button'); // Added login button element
+const loginButton = document.getElementById('login-button');
 const terminal = document.querySelector('.terminal');
 const terminalOutput = document.getElementById('output');
 const inputField = document.getElementById('input');
@@ -29,6 +29,8 @@ loginButton.addEventListener('click', async () => { // Changed to click event on
         // Authentication failed, display an error message
         alert('Authentication failed. Please check your credentials.');
     }
+    
+    return false; // Prevent the form from submitting and page from shrinking
 });
 
 inputField.addEventListener('keydown', async (e) => {
