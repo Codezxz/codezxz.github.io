@@ -7,10 +7,21 @@ inputField.addEventListener('keydown', function (e) {
         inputField.value = '';
         terminal.innerHTML += `<div>$ ${command}</div>`;
         
-        // Simulate a response (replace this with actual server-side processing)
-        setTimeout(() => {
-            const response = 'This is a simulated response to the command: ' + command;
-            terminal.innerHTML += `<div>${response}</div>`;
-        }, 500);
+        // Send the command to a server for processing (replace with your server's URL)
+        fetch('https://your-server-url.com/process-command', {
+            method: 'POST',
+            body: JSON.stringify({ command }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Display the server's response
+            terminal.innerHTML += `<div>${data.response}</div>`;
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
     }
 });
