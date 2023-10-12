@@ -1,6 +1,6 @@
 # Web Terminal
 
-Welcome to the Web Terminal!
+
 
 ## [-_-]
 
