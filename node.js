@@ -2,6 +2,9 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
+const username = process.env.USERNAME;
+const password = process.env.PASSWORD;
+
 
 dotenv.config();
 
