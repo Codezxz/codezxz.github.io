@@ -1,0 +1,83 @@
+@keyframes terminalAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body {
+    font-family: monospace;
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.center-container {
+    text-align: center;
+}
+
+
+.login-form {
+    animation: terminalAnimation 0.5s ease-in-out;
+    width: 100%; /* Change width to 100% to make it full-width */
+    max-width: 600px;
+    margin: 0 auto; /* Center the form horizontally */
+    background-color: black;
+    border: 1px solid white;
+    padding: 20px; /* Increase padding for spacing */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    text-align: center;
+}
+
+/* Center the input elements horizontally */
+.login-form input {
+    box-sizing: border-box; /* Ensure the input elements fit within the login box */
+    width: 100%;
+    padding: 5px;
+    margin: 0 auto; /* Center the input elements horizontally */
+    margin-bottom: 10px;
+}
+
+
+.login-form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.login-form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* Add this CSS to style.css */
+.btn.btn-dark {
+    background-color: #343a40; /* Dark background color */
+    color: white; /* Text color */
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    outline: none; /* Remove the focus outline when clicked */
+}
+
+.btn.btn-dark:hover {
+    background-color: #212529; /* Darker color on hover if desired */
+}
