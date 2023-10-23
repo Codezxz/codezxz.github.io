@@ -1,6 +1,19 @@
-#Code to ACCEPT PDF AND Output it's Summary
-@app.route('/pdfsummarize', methods=['GET','POST'])
+import sys, os
+from aiohttp import request
+import requests
+from flask import Flask
+
+app = Flask(__name__)
+
+# URL Routing - Home Page
+@app.route("/")
+def index():
+    return "Hello World!"
+
+@app.route("/pdf/")
 def api():
+	PDATA = 'Hello how are you?'
+	token = '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'
 	# pdb.set_trace()
 	data = request.files['file']
 	print('Received data:', data)
@@ -43,3 +56,8 @@ def api():
 		return jsonify({"response": response_text})
 	else:
 		return jsonify({"response": "Please upload a PDF with characters < 100."})
+
+
+# Main Function, Runs at http://0.0.0.0:8000
+if __name__ == "__main__":
+    app.run(port=5000)
