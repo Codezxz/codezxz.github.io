@@ -5,34 +5,57 @@
 <script type="text/javascript">window.__WEBFLOW_CURRENCY_SETTINGS = {"currencyCode":"USD","symbol":"$","decimal":".","fractionDigits":2,"group":",","template":"{{wf {\"path\":\"symbol\",\"type\":\"PlainText\"} }} {{wf {\"path\":\"amount\",\"type\":\"CommercePrice\"} }} {{wf {\"path\":\"currencyCode\",\"type\":\"PlainText\"} }}","hideDecimalForWholeNumbers":false};</script></head>
 
 <body>
-  <div class="canvas-wrapper events-off w-embed"><div>
-    <div class="center-container">
-    <div class="login-form">
-        <h2>Login</h2>
-        <form id="login-form" action="/login" method="post">
-            <label for="username"> </label>
+  <div class="canvas-wrapper events-off w-embed">
+    <div>
+      <div class="center-container">
+        <div class="login-form">
+          <h2>Login</h2>
+          <form id="login-form" action="/login" method="post">
+            <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
             <br><br>
-            <label for="password"> </label>
+            <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
             <br><br>
             <button type="submit" class="btn btn-dark">Login</button>
-        </form>
-    </div>
-    <div class="terminal" style="display: none;">
-        <pre id="output"></pre>
-        <input id="input" type="text" autofocus />
+          </form>
+        </div>
+        <div class="terminal" style="display: none;">
+          <pre id="output"></pre>
+          <input id="input" type="text" autofocus />
+        </div>
+      </div>
     </div>
   </div>
-</div><style>
-canvas {
-	width: 100vw;
-  height: 100vh;
-  }
-  /*pointer-events: none;*/
+  
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
 
-</style>
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+    }
 
+    .center-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .login-form {
+      z-index: 1;
+    }
+  </style>
 <canvas data-3d="canvas">
 
 </canvas>
