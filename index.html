@@ -4,26 +4,27 @@
 <link rel="stylesheet" href="style.css">
 <script type="text/javascript">window.__WEBFLOW_CURRENCY_SETTINGS = {"currencyCode":"USD","symbol":"$","decimal":".","fractionDigits":2,"group":",","template":"{{wf {\"path\":\"symbol\",\"type\":\"PlainText\"} }} {{wf {\"path\":\"amount\",\"type\":\"CommercePrice\"} }} {{wf {\"path\":\"currencyCode\",\"type\":\"PlainText\"} }}","hideDecimalForWholeNumbers":false};</script></head>
 
-<div class="center-container">
-  <div class="login-form">
-      <h2>Login</h2>
-      <form id="login-form" action="/login" method="post">
-          <label for="username"> </label>
-          <input type="text" id="username" name="username" required>
-          <br><br>
-          <label for="password"> </label>
-          <input type="password" id="password" name="password" required>
-          <br><br>
-          <button type="submit" class="btn btn-dark">Login</button>
-      </form>
-  </div>
-  <div class="terminal" style="display: none;">
-      <pre id="output"></pre>
-      <input id="input" type="text" autofocus />
-  </div>
-</div>
 <body>
-  <div class="canvas-wrapper events-off w-embed"><style>
+  <div class="canvas-wrapper events-off w-embed"><div>
+    <div class="center-container">
+    <div class="login-form">
+        <h2>Login</h2>
+        <form id="login-form" action="/login" method="post">
+            <label for="username"> </label>
+            <input type="text" id="username" name="username" required>
+            <br><br>
+            <label for="password"> </label>
+            <input type="password" id="password" name="password" required>
+            <br><br>
+            <button type="submit" class="btn btn-dark">Login</button>
+        </form>
+    </div>
+    <div class="terminal" style="display: none;">
+        <pre id="output"></pre>
+        <input id="input" type="text" autofocus />
+    </div>
+  </div>
+</div><style>
 canvas {
 	width: 100vw;
   height: 100vh;
@@ -35,6 +36,7 @@ canvas {
 <canvas data-3d="canvas">
 
 </canvas>
+
 
 </div>
 <div class="global-styles trigger-arrow w-embed">
